@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>123</title>
+    <style type="text/css">
+
+        html,body{
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            background: #f6f6f6;
+        }
+        #wrapper{
+            display: flex;
+            height: 100%;
+            width: 100%;
+            /* justify-content: center; */
+        }
+
+        .flex-wrap{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .main-left{
+            /* position: relative; */
+            /* display: flex;
+            flex-wrap: wrap;
+            flex-direction:column; */
+            width: 100px;
+            height: 100%;
+            background-color:rgb(29, 37, 49);
+        }
+        .main{
+            overflow: hidden;
+            /* display: flex;
+            flex-wrap: wrap; */
+            width: 100%;
+            height: 100%;
+            background-color:rgb(230, 233, 236);
+        }
+        .tag01,.tag02,.tag03,.tag04{
+            position: fixed;
+            display: flex;
+            width: 100px;
+            height: 100px;
+            background-repeat:no-repeat;
+            background-position:center;
+            align-items: center;
+            justify-content: center;
+        }
+        .tag01:hover,.tag02:hover,.tag03:hover,.tag04:hover{
+            background-size:80px;
+        }
+        .tag01{
+            background-image: url(imgs/Base01s.png);
+            top: 10px;
+        }
+        .tag02{
+            background-image: url(imgs/Base2.png);
+            top: 80px;
+        }
+        .tag03{
+            background-image: url(imgs/Base3.png);
+            top: 150px;
+        }
+        .tag04{
+            background-image: url(imgs/Base4.png);
+            top: 220px;
+        }
+        .tool01,.tool02{
+            position: fixed; 
+            bottom: 10px;        
+        }
+        .tool01{
+            left: 30px;
+        }
+        .tool02{
+            
+            left: 60px;
+        }
+        .nav{
+            display: flex;
+            position: relative;
+            width: 250px;
+            height: 100%;
+            background-color:rgb(34, 44, 60)
+        }
+
+        .nav ul{
+            width: 100%;
+            height: 100%;
+            padding-left: 20px;
+            list-style: none;
+            margin: 0;
+        }
+        ul .li,.header-li,.li-foot{
+            position: initial;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        .header-li{
+            color:rgb(120, 120, 120); 
+            background: url(imgs/Settings.png) no-repeat 162px 1px;
+        }
+        .li-foot{
+            color: white;
+            font-weight: bold;
+            position: fixed;
+            bottom: 25px;
+        }
+        .span01,.span02{
+            position: absolute;
+            border-radius: 14px;
+            left: 177px;
+        }
+        .span01:hover,.span02:hover{
+            font-size: 20px;
+        }
+        .span01{
+            background-color: rgb(8, 176, 253);
+            color:white;
+        }
+        .span02{
+            background-color: red;
+            color:white;
+
+        }
+        .li{
+            color: rgb(199, 198, 198);
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .li:hover{
+            color: white;
+        }
+        .right-nav{
+            width: 100%;
+        }
+        .box{
+        position: fixed;
+        overflow: hidden;
+        width: 190px; 
+        height: 4px;
+        border-radius: 4px;
+        background-color: rgb(174, 174, 174);
+        bottom: 15px;
+        }
+        .status{
+        list-style: none;
+        width: 20%;
+        height: 4px;
+        background:linear-gradient(to right, #d829cf,rgb(92, 175, 243));
+        border-radius: 4px;
+        }
+        .header-box{
+            position: relative;
+            height: 80px;
+            width: 100%;
+            border-bottom: 1px solid rgb(206, 202, 202);
+            list-style: none;
+            box-shadow: -12px 0px 15px black;
+            
+        }
+        .li-main{
+            color:rgb(112, 112, 112);
+            font-size: 30px;
+            font-family: Helvetica, sans-serif;
+            text-shadow: 2px 2px 2px rgb(112, 111, 111);
+            position: absolute;
+            bottom: 25px;
+            left: 35px;
+        }
+        .box-div{
+            position: fixed;
+            height: 80px;
+            width: 240px;
+            background: url(imgs/Face4.png) no-repeat 0px 15px;
+            right: 10px;
+        }
+        .name-li,.statu-li{
+            list-style: none;
+            position: absolute;
+            left: 70px;
+        }
+        .name-li{
+            color: rgb(55, 143, 214);
+            top: 20px;
+            font-weight: bold;
+        }
+        .statu-li{
+            top: 40px;
+            font-size: 12px;
+        }
+        .box-div img{
+            position: absolute;
+            left: 210px;
+            top: 36px;
+            height: 10px;
+        }
+        .box-div img:hover{
+            width: 20px;
+        }
+        .main-content{
+            display: flex;
+            position: relative;
+	        overflow: hidden;
+            height: 100%;
+            width: 100%;
+        }
+        .content-left,.content-rigth{
+            position: relative;
+	        overflow: hidden;
+            /* position: absolute; */
+            height: 100%;
+            top: 0;
+        }
+        .content-left{
+            width: 369px;
+            /* right: -17px; */
+            
+        }
+        .content-rigth{
+            overflow-x: hidden;
+            overflow-y: scroll;
+            right: 0px;
+            width: 100%;
+        }
+        .scroll-left{
+            position: absolute;
+            left: 0px;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            width: 391px;
+            height: 100%;
+        }
+        .content-left div,.content-rigth div{
+            border-bottom:1px solid rgb(206, 204, 204);
+            border-left: 1px solid  rgb(206, 204, 204);
+        }
+        .search-box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 71px;
+            width: 100%;
+        }
+        .input-box{
+            display: flex;
+            width: 200px;
+            height: 30px;
+            border: 1px solid rgb(190, 189, 190);
+            border-radius: 5px;
+            padding: 6px 10px;
+            transition: width .2s,border .2s;
+            -webkit-transition:width .2s;
+            
+        }
+        
+        .content-left input{
+            /* -webkit-box-flex: 1; */
+            flex-grow: 1;
+            padding: 0;
+            overflow: hidden;
+            background: transparent;
+            border: none;
+            resize: none;
+            outline: none;
+        }
+        .input-box:hover{
+            width: 300px;
+        }
+        .search-button{
+            position: relative;
+            background:url(imgs/Search\ icon.png) no-repeat 0px 0px;
+            outline: none;
+            border: none;
+            width: 21px;
+            height: 21px;
+            top: 6px;
+        }
+        .search-button:hover{
+            background-size: 20px;
+        }
+        .content-rigth-header{
+            position: relative;
+            height: 71px;
+            width: 100%;
+            display: flex;
+        }
+        .rigth-text1,.right-text2{
+            position: absolute;
+            font-weight: bold;
+            top: 23px;
+            color: rgb(114, 113, 113);
+            list-style: none;
+        }
+        .tips{
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            background-color: rgb(123, 255, 0);
+            left: 157px;
+            top: 31px;
+        }
+        .right-tool1,.right-tool2,.right-tool3,.right-tool4,.right-tool5{
+            display: flex;
+            position: absolute;
+            background:linear-gradient( rgb(243, 243, 243),rgb(230, 230, 230),rgb(225,225,225));
+            border:1px solid rgb(174, 174, 174);
+            border-radius: 5px;
+            width: 25px;
+            height: 25px;
+            top: 22px;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 1px 1px black;
+
+        }
+        .right-tool1{
+            left: 573px;
+        }
+        .right-tool2{
+            left: 600px;
+        }
+        .right-tool3{
+            left: 626px;
+        }
+        .right-tool4{
+            left: 770px;
+        }
+        .right-tool5{
+            left: 800px;
+        }
+        .right-tool1:hover,.right-tool2:hover,.right-tool3:hover{
+            height: 30px;
+        }
+        .right-tool5:hover,.right-tool4:hover{
+            background:linear-gradient(to right, rgb(16, 198, 253),rgb(188, 28, 252),rgb(250, 22, 182));
+            
+        }
+        .rigth-text1{
+            left: 38px;
+        }
+        .right-text2{
+            left: 700px;
+        }
+        .rigth-line{
+            position: absolute;
+            width: 0px;
+            height: 25px;
+            border-left: 1px solid rgb(192, 192, 192);;
+            left: 678px;
+            top: 23px;
+        }
+        .content-box,.content-content{
+            width: 100%;
+        }
+        .content-box{
+            height: 130px;
+        }
+        .content-content{
+            height: 300px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="main-left">
+            <div class="tag01"><img src="imgs/Item 1.png"></div>
+            <div class="tag02"><img src="imgs/Item 2.png"></div>
+            <div class="tag03"><img src="imgs/Item 3.png"></div>
+            <div class="tag04"><img src="imgs/Plus Icon.png"></div>
+            <div class="tool01"><img src="imgs/Grid.png"></div>
+            <div class="tool02"><img src="imgs/Settings.png"></div>
+        </div>
+    <div class="nav">
+        <ul>
+            <li class="header-li">menu</li>
+            <li class="li">Overview</li>
+            <li class="li"><span class="span01">&nbsp; 55 &nbsp;</span>Sales </li>
+            <li class="li">Your&nbsp;Staff</li>
+            <li class="li">Analytics & Targeting</li>
+            <li class="li">What's New</li>
+            <img src="imgs/Divider.png" >
+            <li class="header-li">Your PRODUCTS</li>
+            <li class="li">Books</li>
+            <li class="li">Tutorial</li>
+            <li class="li">Stocks</li>
+            <li class="li">Infographics</li>
+            <img src="imgs/Divider.png" >
+            <li class="header-li">DASHBOARD</li>
+            <li class="li"><span class="span01">&nbsp; 23 &nbsp;</span>Messages </li>
+            <li class="li">Connections</li>
+            <li class="li">Intergrations</li>
+            <li class="li"> <span class="span02">&nbsp;！&nbsp;</span> Account Settings</li>
+            <li class="li">App Settings</li>
+            <img src="imgs/Divider.png" >
+            <div class="box">
+                <li class="status"></li>
+            </div>
+            <p class="li-foot">Monthly &nbsp;  &nbsp;$580/$3200 </p>
+        </ul>
+        
+    </div>
+        <div class="main" >
+            <div class="header-box">
+               <li class="li-main">Messages</li> 
+               <div class="box-div">
+                   <ul>
+                       <li class="name-li">Jordan&nbspJ.</li>
+                       <li class="statu-li">Administrator</li>
+                   </ul>
+                   <img src="imgs/dropdown.png">
+               </div>
+            </div>
+            <div class="main-content">
+                <div class="content-left">
+                    <div class="search-box">
+                        <label class="input-box"><input type="text" placeholder ="Search"><button class="search-button"></button></label>
+                    </div>
+                    <div class="scroll-left">
+                    <div class="content-box"></div>
+                    <div class="content-box"></div>
+                    <div class="content-box"></div>
+                    <div class="content-box"></div>
+                    <div class="content-box"></div>
+                    <div class="content-box"></div>
+                    <div class="content-box"></div>
+                    <div class="content-box"></div>
+                    <div class="content-box"></div>
+                    <div class="content-box"></div>
+                    </div>
+
+                </div>
+                <div class="content-rigth">
+                    <div class="content-rigth-header">
+                        <li class="rigth-text1">Bessie&nbsp;Berry</li>
+                        <div class="tips"></div>
+                        <div class="right-tool1"><img src="imgs/User icon.png" alt=""></div>
+                        <div class="right-tool2"><img src="imgs/Upload icon.png" alt=""></div>
+                        <div class="right-tool3"><img src="imgs/Trash icon.png" alt=""></div>
+                        <div class="right-tool4"><img src="imgs/Arrow left.png" alt=""></div>
+                        <div class="right-tool5"><img src="imgs/Arrow right.png" alt=""></div>
+                        <li class="right-text2">1&nbsp;of&nbsp;28</li>
+                        <div class="rigth-line"></div>
+                    </div>
+                    <div class="content-content"></div>
+                    <div class="content-content"></div>
+                    <div class="content-content"></div>
+                    <div class="content-content"></div>
+                    <div class="content-content"></div>
+                    <div class="content-content"></div>
+                    <div class="content-content"></div>
+                    <div class="content-content"></div>
+                    <div class="content-content"></div>
+                    <div class="content-content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
