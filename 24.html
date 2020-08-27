@@ -8,50 +8,86 @@
 
         html,body{
             height: 100%;
-            width: 100%;
+        }
+        body{
+            height: 100%;
+            min-width: 1142px;
+            min-height: 662px;
             margin: 0;
+            /* overflow: hidden; */
             background: #f6f6f6;
+            line-height: 1.5;
+            font-size: 14px;
+            font-family: "ProximaNova", Geneva, sans-serif;
         }
         #wrapper{
             display: flex;
-            height: 100%;
-            width: 100%;
+            height: 100%; 
+            /* width: 100%;  */
+            /* overflow: hidden; */
             /* justify-content: center; */
+            /* position: relative; */
+            box-sizing: border-box;
+            /* max-height: 1100px;
+            max-width: 2210px; */
+            /* max-width: 2147px; */
+        }
+        .main-left{
+            position: relative;
+            /* display: flex;
+            flex-wrap: wrap;
+            flex-direction:column; */
+            /* width: 100px; */
+            /* min-height: 600px; */
+            /* position: relative; */
+            background-color:rgb(29, 37, 49);
+        }
+        .nav{
+            /* display: flex;
+            position: relative; */
+            min-width: 250px; 
+            background-color:rgb(34, 44, 60)
+            
+        }
+        .main{
+            /* position: relative; */
+            /* overflow: hidden; */
+            /* display: flex;
+            flex-wrap: wrap;  */
+            /* overflow-y: auto;
+            overflow-x: hidden; */
+            width: 100%;
+            /* min-width: 980px; */
+            background-color:rgb(230, 233, 236);
+        }
+        .icon-box{
+            position: relative;
+            right: 20px;
         }
 
+        img:hover{
+            height: 20px;
+        }
         .flex-wrap{
             display: flex;
             flex-wrap: wrap;
         }
-        .main-left{
-            /* position: relative; */
-            /* display: flex;
-            flex-wrap: wrap;
-            flex-direction:column; */
-            width: 100px;
-            height: 100%;
-            background-color:rgb(29, 37, 49);
-        }
-        .main{
-            overflow: hidden;
-            /* display: flex;
-            flex-wrap: wrap; */
-            width: 100%;
-            height: 100%;
-            background-color:rgb(230, 233, 236);
-        }
+        
+        
+
         .tag01,.tag02,.tag03,.tag04{
-            position: fixed;
+            /* position: fixed; */
             display: flex;
-            width: 100px;
-            height: 100px;
+            margin: 20px;
+            width: 60px;
+            height: 60px;
             background-repeat:no-repeat;
             background-position:center;
             align-items: center;
             justify-content: center;
         }
         .tag01:hover,.tag02:hover,.tag03:hover,.tag04:hover{
-            background-size:80px;
+            background-size:50px;
         }
         .tag01{
             background-image: url(imgs/Base01s.png);
@@ -70,7 +106,7 @@
             top: 220px;
         }
         .tool01,.tool02{
-            position: fixed; 
+            position: absolute; 
             bottom: 10px;        
         }
         .tool01{
@@ -79,24 +115,19 @@
         .tool02{
             
             left: 60px;
-        }
-        .nav{
-            display: flex;
-            position: relative;
-            width: 250px;
-            height: 100%;
-            background-color:rgb(34, 44, 60)
-        }
+        }       
+
 
         .nav ul{
-            width: 100%;
+            /* width: 100%;
             height: 100%;
-            padding-left: 20px;
+            padding-left: 20px; */
             list-style: none;
             margin: 0;
+            padding-inline-start: 0px;
         }
         ul .li,.header-li,.li-foot{
-            position: initial;
+            /* position: initial; */
             font-size: 14px;
             margin-bottom: 15px;
         }
@@ -172,7 +203,7 @@
             left: 35px;
         }
         .box-div{
-            position: fixed;
+            position: absolute;
             height: 80px;
             width: 240px;
             background: url(imgs/Face4.png) no-repeat 0px 15px;
@@ -203,37 +234,44 @@
         }
         .main-content{
             display: flex;
-            position: relative;
-	        overflow: hidden;
-            height: 100%;
+            /* position: relative; */
+	        /* overflow: hidden; */
+            /* height: 100%; */
             width: 100%;
+            box-sizing: border-box;
         }
         .content-left,.content-rigth{
-            position: relative;
+            /* position: relative; */
 	        overflow: hidden;
             /* position: absolute; */
-            height: 100%;
+            /* height: 100%; */
             top: 0;
+            box-sizing: border-box;
+            /* max-height: 1464px; */
         }
         .content-left{
-            width: 369px;
+            min-width: 369px;
             /* right: -17px; */
             
         }
         .content-rigth{
-            overflow-x: hidden;
-            overflow-y: scroll;
-            right: 0px;
-            width: 100%;
+            overflow-y:auto;
+            width:100%;
+        }
+        .scroll-left,.scroll-right{
+            /* position: relative; */
+            /* left: 0px; */
+            overflow-y: auto;
+            overflow-x:hidden;
+            height: calc(100vh - 154px);
         }
         .scroll-left{
-            position: absolute;
-            left: 0px;
-            overflow-x: hidden;
-            overflow-y: scroll;
+            
             width: 391px;
-            height: 100%;
         }
+        /* .scroll-right{
+            max-height: 1000pT;
+        } */
         .content-left div,.content-rigth div{
             border-bottom:1px solid rgb(206, 204, 204);
             border-left: 1px solid  rgb(206, 204, 204);
@@ -286,12 +324,12 @@
             position: relative;
             height: 71px;
             width: 100%;
-            display: flex;
+            /* display: flex; */
         }
         .rigth-text1,.right-text2{
             position: absolute;
             font-weight: bold;
-            top: 23px;
+            top: 26px;
             color: rgb(114, 113, 113);
             list-style: none;
         }
@@ -299,10 +337,13 @@
             position: absolute;
             width: 10px;
             height: 10px;
-            border-radius: 10px;
+            border-radius: 5px;
             background-color: rgb(123, 255, 0);
-            left: 157px;
-            top: 31px;
+            right: -10px;
+            top: 7px;
+        }
+        .tips:hover{
+            background-color: rgb(255, 0, 0);
         }
         .right-tool1,.right-tool2,.right-tool3,.right-tool4,.right-tool5{
             display: flex;
@@ -319,19 +360,19 @@
 
         }
         .right-tool1{
-            left: 573px;
+            right: 214px;
         }
         .right-tool2{
-            left: 600px;
+            right: 186px;
         }
         .right-tool3{
-            left: 626px;
+            right: 158px;
         }
         .right-tool4{
-            left: 770px;
+            right: 38px;
         }
         .right-tool5{
-            left: 800px;
+            right: 10px;
         }
         .right-tool1:hover,.right-tool2:hover,.right-tool3:hover{
             height: 30px;
@@ -344,18 +385,18 @@
             left: 38px;
         }
         .right-text2{
-            left: 700px;
+            right: 74px;
         }
-        .rigth-line{
+        /* .rigth-line{
             position: absolute;
             width: 0px;
             height: 25px;
             border-left: 1px solid rgb(192, 192, 192);;
             left: 678px;
             top: 23px;
-        }
+        } */
         .content-box,.content-content{
-            width: 100%;
+            width: 100%
         }
         .content-box{
             height: 130px;
@@ -377,7 +418,7 @@
             <div class="tool02"><img src="imgs/Settings.png"></div>
         </div>
     <div class="nav">
-        <ul>
+        <!-- <ul>
             <li class="header-li">menu</li>
             <li class="li">Overview</li>
             <li class="li"><span class="span01">&nbsp; 55 &nbsp;</span>Sales </li>
@@ -402,7 +443,7 @@
                 <li class="status"></li>
             </div>
             <p class="li-foot">Monthly &nbsp;  &nbsp;$580/$3200 </p>
-        </ul>
+        </ul> -->
         
     </div>
         <div class="main" >
@@ -437,16 +478,18 @@
                 </div>
                 <div class="content-rigth">
                     <div class="content-rigth-header">
-                        <li class="rigth-text1">Bessie&nbsp;Berry</li>
-                        <div class="tips"></div>
+                        <li class="rigth-text1"> <div class="tips"></div>Bessie&nbsp;Berry &nbsp;&nbsp;&nbsp; </li>
+                    <div class="icon-box">
                         <div class="right-tool1"><img src="imgs/User icon.png" alt=""></div>
                         <div class="right-tool2"><img src="imgs/Upload icon.png" alt=""></div>
                         <div class="right-tool3"><img src="imgs/Trash icon.png" alt=""></div>
+                        <li class="right-text2">1&nbsp;of&nbsp;28</li> 
                         <div class="right-tool4"><img src="imgs/Arrow left.png" alt=""></div>
                         <div class="right-tool5"><img src="imgs/Arrow right.png" alt=""></div>
-                        <li class="right-text2">1&nbsp;of&nbsp;28</li>
-                        <div class="rigth-line"></div>
                     </div>
+                        
+                    </div>
+                    <div class="scroll-right">
                     <div class="content-content"></div>
                     <div class="content-content"></div>
                     <div class="content-content"></div>
@@ -457,9 +500,6 @@
                     <div class="content-content"></div>
                     <div class="content-content"></div>
                     <div class="content-content"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+                </div>    
 </body>
 </html>
