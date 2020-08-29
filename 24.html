@@ -6,13 +6,18 @@
     <title>123</title>
     <style type="text/css">
 
-        html,body{
+        /* html,body{
             height: 100%;
+        } */
+        html, body, div, ul, li, p {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
         }
         body{
             height: 100%;
             min-width: 1142px;
-            min-height: 662px;
+            /* min-height: 400px; */
             margin: 0;
             /* overflow: hidden; */
             background: #f6f6f6;
@@ -27,7 +32,7 @@
             /* overflow: hidden; */
             /* justify-content: center; */
             /* position: relative; */
-            box-sizing: border-box;
+            /* box-sizing: border-box; */
             /* max-height: 1100px;
             max-width: 2210px; */
             /* max-width: 2147px; */
@@ -43,11 +48,12 @@
             background-color:rgb(29, 37, 49);
         }
         .nav{
-            /* display: flex;
-            position: relative; */
+            /* display: flex; */
+            position: relative;
+            padding-left: 20px;
             min-width: 250px; 
-            background-color:rgb(34, 44, 60)
-            
+            background-color:rgb(34, 44, 60);
+            background-origin: padding-box;
         }
         .main{
             /* position: relative; */
@@ -59,13 +65,14 @@
             width: 100%;
             /* min-width: 980px; */
             background-color:rgb(230, 233, 236);
+            /* box-sizing: border-box; */
         }
         .icon-box{
             position: relative;
             right: 20px;
         }
 
-        img:hover{
+        .main-left img:hover{
             height: 20px;
         }
         .flex-wrap{
@@ -119,12 +126,13 @@
 
 
         .nav ul{
-            /* width: 100%;
-            height: 100%;
-            padding-left: 20px; */
+            padding-top: 30px;
+            padding-left: 20px;
             list-style: none;
             margin: 0;
             padding-inline-start: 0px;
+            overflow: hidden;
+            max-width: 250px;
         }
         ul .li,.header-li,.li-foot{
             /* position: initial; */
@@ -138,13 +146,15 @@
         .li-foot{
             color: white;
             font-weight: bold;
-            position: fixed;
-            bottom: 25px;
+            position: absolute;
+            bottom: 6px;
         }
         .span01,.span02{
             position: absolute;
             border-radius: 14px;
             left: 177px;
+            max-width: 40px;
+            max-height: 30px;
         }
         .span01:hover,.span02:hover{
             font-size: 20px;
@@ -169,7 +179,7 @@
             width: 100%;
         }
         .box{
-        position: fixed;
+        position: absolute;
         overflow: hidden;
         width: 190px; 
         height: 4px;
@@ -185,6 +195,7 @@
         border-radius: 4px;
         }
         .header-box{
+            
             position: relative;
             height: 80px;
             width: 100%;
@@ -238,7 +249,7 @@
 	        /* overflow: hidden; */
             /* height: 100%; */
             width: 100%;
-            box-sizing: border-box;
+            /* box-sizing: border-box; */
         }
         .content-left,.content-rigth{
             /* position: relative; */
@@ -246,7 +257,7 @@
             /* position: absolute; */
             /* height: 100%; */
             top: 0;
-            box-sizing: border-box;
+            /* box-sizing: border-box; */
             /* max-height: 1464px; */
         }
         .content-left{
@@ -261,22 +272,25 @@
         .scroll-left,.scroll-right{
             /* position: relative; */
             /* left: 0px; */
+            /* box-sizing: content-box; */
             overflow-y: auto;
             overflow-x:hidden;
-            height: calc(100vh - 154px);
+            
+            min-height: 500px;
         }
         .scroll-left{
-            
+            height: calc(100vh - 151px);
             width: 391px;
         }
-        /* .scroll-right{
-            max-height: 1000pT;
+        .scroll-right{
+            height: calc(100vh - 208px);
+        }
+        /* .content-left div,.content-rigth div{
+
         } */
-        .content-left div,.content-rigth div{
+        .search-box{
             border-bottom:1px solid rgb(206, 204, 204);
             border-left: 1px solid  rgb(206, 204, 204);
-        }
-        .search-box{
             display: flex;
             justify-content: center;
             align-items: center;
@@ -324,6 +338,8 @@
             position: relative;
             height: 71px;
             width: 100%;
+            border-bottom:1px solid rgb(206, 204, 204);
+            border-left: 1px solid  rgb(206, 204, 204);
             /* display: flex; */
         }
         .rigth-text1,.right-text2{
@@ -396,16 +412,187 @@
             top: 23px;
         } */
         .content-box,.content-content{
-            width: 100%
+            /* box-sizing: border-box; */
+            width: 100%;
+            margin: 0;
         }
         .content-box{
-            height: 130px;
+            position: relative;
+            min-height: 130px;
+            border-bottom:1px solid rgb(206, 204, 204);
+            border-left: 1px solid  rgb(206, 204, 204);
         }
         .content-content{
             height: 300px;
+            
         }
 
-    </style>
+        .chats-highlight{
+            position: absolute;
+            width: 3px;
+            height: 100%;
+            background-color: rgb(36,154,252);
+            top: 0;
+            left: 0;
+        }
+        .chats-info {
+            position: relative;
+        }
+        .chats-face {
+            position: absolute;
+            left: 8px;
+            top: 8px;
+        }
+        .chats-name {
+            padding-top: 8px;
+            margin-left: 60px;
+            font-size: 16px;
+            color: #000000;
+        }
+        .chats-from {
+            margin-left: 60px;
+            font-size: 14px;
+            color: #AAAAAA;
+        }
+        .chats-time {
+            position: absolute;
+            right: 46px;
+            top: 10px;
+            font-size: 14px;
+        }
+        .chats-content {
+            padding-top: 10px;
+            padding-right: 25px;
+            padding-left: 17px;
+            margin-right: 15px;
+            font-size: 14px;
+        }
+        
+        .chats-inform {
+            width: 22px;
+            height: 22px;
+            position: absolute;
+            right: 20px;
+            bottom: 7px;
+            border-radius: 22px;
+            text-align: center;
+            border-radius: 10px;
+            background-color: rgb(4, 181, 252);
+            line-height: 22px;
+            color: #FFFFFF;
+            font-size: 14px;
+        }
+        .section {
+            text-align: center;
+            padding: 25px 50px 0px 30px;
+            position: relative;
+            border-top: 1px solid #DDDDDD;
+            border-bottom:1px solid rgb(206, 204, 204);
+            border-left: 1px solid  rgb(206, 204, 204);
+        }
+        .openchat-talk {
+            height: 56px;
+            width: 100%;
+            margin-left: 2px;
+            margin-top: 1px;
+            border: 1px solid #727171;
+            box-sizing: border-box;
+            padding-left: 70px;
+            outline: none;
+            border-radius: 6px;
+            background: transparent;
+        }
+        .openchat-add {
+            position: absolute;
+            left: 25px;
+            top: -1px;
+            z-index: 1;
+        }
+        .input-box-p{
+            border-left: 1px solid rgb(206, 204, 204);
+            padding: 0px 25px 0px 25px;
+            position: relative;
+        }
+        .section-box {
+            height: 100%;
+            width: calc(100% + 20px );
+            width: -moz-calc(100% + 20px );
+            width: -webkit-calc(100% + 20px);
+            overflow-y: auto;
+        }
+        .receiving, .sending {
+            margin-bottom: 25px;
+            padding-left: 70px;
+            position: relative;
+            text-align: left;
+        }
+        .own-face, .receiving-face {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .receiving-name, .sending-name {
+            color: #000000;
+            font-size: 16px;
+            margin-right: 3px;
+        }
+        .receiving-content, .sending-content {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+        .receiving-name, .sending-name {
+            color: #000000;
+            font-size: 16px;
+            margin-right: 3px;
+        }
+        .receiving-time, .sending-time {
+            color: #AAAAAA;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .section-time {
+            position: absolute;
+            top: 0px;
+            transform: translate(-45px,-50%);
+            background-color:rgb(230, 233, 236);
+            padding: 0 15px;
+        }
+        .sending-img {
+            display: inline-block;
+            margin-top: 17px;
+            margin-right: 13px;
+            position: relative;
+            line-height: 0px;
+        }
+        .filter {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            background-color: #333333;
+            background-position-x: 50%;
+            opacity: 0.7;
+        }
+        .open-icon {
+            display: none;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-image: url(imgs/download.png);
+        }
+        .sending-img:hover .filter,
+        .sending-img:hover .open-icon{
+            display: block;
+        }
+
+ </style>
 </head>
 <body>
     <div id="wrapper">
@@ -418,7 +605,7 @@
             <div class="tool02"><img src="imgs/Settings.png"></div>
         </div>
     <div class="nav">
-        <!-- <ul>
+        <ul>
             <li class="header-li">menu</li>
             <li class="li">Overview</li>
             <li class="li"><span class="span01">&nbsp; 55 &nbsp;</span>Sales </li>
@@ -427,10 +614,10 @@
             <li class="li">What's New</li>
             <img src="imgs/Divider.png" >
             <li class="header-li">Your PRODUCTS</li>
-            <li class="li">Books</li>
-            <li class="li">Tutorial</li>
-            <li class="li">Stocks</li>
-            <li class="li">Infographics</li>
+            <li class="li"> <img src="imgs/Book of Wisdom.png" alt=""> &nbsp;&nbsp; Books</li>
+            <li class="li"> <img src="imgs/Video Camera.png" alt=""> &nbsp;&nbsp; Tutorial</li>
+            <li class="li"> <img src="imgs/Painting.png" alt="">&nbsp;&nbsp; Stocks</li>
+            <li class="li"> <img src="imgs/Chart.png" alt=""> &nbsp;&nbsp; Infographics</li>
             <img src="imgs/Divider.png" >
             <li class="header-li">DASHBOARD</li>
             <li class="li"><span class="span01">&nbsp; 23 &nbsp;</span>Messages </li>
@@ -443,10 +630,10 @@
                 <li class="status"></li>
             </div>
             <p class="li-foot">Monthly &nbsp;  &nbsp;$580/$3200 </p>
-        </ul> -->
+        </ul>
         
     </div>
-        <div class="main" >
+        <div class="main">
             <div class="header-box">
                <li class="li-main">Messages</li> 
                <div class="box-div">
@@ -463,43 +650,295 @@
                         <label class="input-box"><input type="text" placeholder ="Search"><button class="search-button"></button></label>
                     </div>
                     <div class="scroll-left">
-                    <div class="content-box"></div>
-                    <div class="content-box"></div>
-                    <div class="content-box"></div>
-                    <div class="content-box"></div>
-                    <div class="content-box"></div>
-                    <div class="content-box"></div>
-                    <div class="content-box"></div>
-                    <div class="content-box"></div>
-                    <div class="content-box"></div>
-                    <div class="content-box"></div>
+                    <div class="content-box">
+                        <div class="chats-highlight"></div>
+                        <div class="chats-info">
+                            <img src="imgs/Face8.png" class="chats-face">
+                            <p class="chats-name">Bessie Berry</p>
+                            <p class="chats-from">Twitter</p>
+                            <span class="chats-time">3m</span>
+                        </div>
+                        <div class="chats-content">I shared this on my fb wall a few months back, and I thought I'd share it here again because it's such a great..</div>
+                    <div class="chats-inform">4</div>
+                    </div>
+                    <div class="content-box">
+                        <div class="chats-highlight"></div>
+                        <div class="chats-info">
+                            <img src="imgs/Face8.png" class="chats-face">
+                            <p class="chats-name">Bessie Berry</p>
+                            <p class="chats-from">Twitter</p>
+                            <span class="chats-time">3m</span>
+                        </div>
+                        <div class="chats-content">I shared this on my fb wall a few months back, and I thought I'd share it here again because it's such a great..</div>
+                    <div class="chats-inform">4</div>
+                    </div><div class="content-box">
+                        <div class="chats-highlight"></div>
+                        <div class="chats-info">
+                            <img src="imgs/Face8.png" class="chats-face">
+                            <p class="chats-name">Bessie Berry</p>
+                            <p class="chats-from">Twitter</p>
+                            <span class="chats-time">3m</span>
+                        </div>
+                        <div class="chats-content">I shared this on my fb wall a few months back, and I thought I'd share it here again because it's such a great..</div>
+                    <div class="chats-inform">4</div>
+                    </div><div class="content-box">
+                        <div class="chats-highlight"></div>
+                        <div class="chats-info">
+                            <img src="imgs/Face8.png" class="chats-face">
+                            <p class="chats-name">Bessie Berry</p>
+                            <p class="chats-from">Twitter</p>
+                            <span class="chats-time">3m</span>
+                        </div>
+                        <div class="chats-content">I shared this on my fb wall a few months back, and I thought I'd share it here again because it's such a great..</div>
+                    <div class="chats-inform">4</div>
+                    </div><div class="content-box">
+                        <div class="chats-highlight"></div>
+                        <div class="chats-info">
+                            <img src="imgs/Face8.png" class="chats-face">
+                            <p class="chats-name">Bessie Berry</p>
+                            <p class="chats-from">Twitter</p>
+                            <span class="chats-time">3m</span>
+                        </div>
+                        <div class="chats-content">I shared this on my fb wall a few months back, and I thought I'd share it here again because it's such a great..</div>
+                    <div class="chats-inform">4</div>
+                    </div><div class="content-box">
+                        <div class="chats-highlight"></div>
+                        <div class="chats-info">
+                            <img src="imgs/Face8.png" class="chats-face">
+                            <p class="chats-name">Bessie Berry</p>
+                            <p class="chats-from">Twitter</p>
+                            <span class="chats-time">3m</span>
+                        </div>
+                        <div class="chats-content">I shared this on my fb wall a few months back, and I thought I'd share it here again because it's such a great..</div>
+                    <div class="chats-inform">4</div>
+                    </div><div class="content-box">
+                        <div class="chats-highlight"></div>
+                        <div class="chats-info">
+                            <img src="imgs/Face8.png" class="chats-face">
+                            <p class="chats-name">Bessie Berry</p>
+                            <p class="chats-from">Twitter</p>
+                            <span class="chats-time">3m</span>
+                        </div>
+                        <div class="chats-content">I shared this on my fb wall a few months back, and I thought I'd share it here again because it's such a great..</div>
+                    <div class="chats-inform">4</div>
+                    </div><div class="content-box">
+                        <div class="chats-highlight"></div>
+                        <div class="chats-info">
+                            <img src="imgs/Face8.png" class="chats-face">
+                            <p class="chats-name">Bessie Berry</p>
+                            <p class="chats-from">Twitter</p>
+                            <span class="chats-time">3m</span>
+                        </div>
+                        <div class="chats-content">I shared this on my fb wall a few months back, and I thought I'd share it here again because it's such a great..</div>
+                    <div class="chats-inform">4</div>
+                    </div><div class="content-box">
+                        <div class="chats-highlight"></div>
+                        <div class="chats-info">
+                            <img src="imgs/Face8.png" class="chats-face">
+                            <p class="chats-name">Bessie Berry</p>
+                            <p class="chats-from">Twitter</p>
+                            <span class="chats-time">3m</span>
+                        </div>
+                        <div class="chats-content">I shared this on my fb wall a few months back, and I thought I'd share it here again because it's such a great..</div>
+                    <div class="chats-inform">4</div>
+                    </div><div class="content-box">
+                        <div class="chats-highlight"></div>
+                        <div class="chats-info">
+                            <img src="imgs/Face8.png" class="chats-face">
+                            <p class="chats-name">Bessie Berry</p>
+                            <p class="chats-from">Twitter</p>
+                            <span class="chats-time">3m</span>
+                        </div>
+                        <div class="chats-content">I shared this on my fb wall a few months back, and I thought I'd share it here again because it's such a great..</div>
+                    <div class="chats-inform">4</div>
+                    </div><div class="content-box">
+                        <div class="chats-highlight"></div>
+                        <div class="chats-info">
+                            <img src="imgs/Face8.png" class="chats-face">
+                            <p class="chats-name">Bessie Berry</p>
+                            <p class="chats-from">Twitter</p>
+                            <span class="chats-time">3m</span>
+                        </div>
+                        <div class="chats-content">I shared this on my fb wall a few months back, and I thought I'd share it here again because it's such a great..</div>
+                    <div class="chats-inform">4</div>
+                    </div>
                     </div>
 
                 </div>
                 <div class="content-rigth">
-                    <div class="content-rigth-header">
-                        <li class="rigth-text1"> <div class="tips"></div>Bessie&nbsp;Berry &nbsp;&nbsp;&nbsp; </li>
-                    <div class="icon-box">
-                        <div class="right-tool1"><img src="imgs/User icon.png" alt=""></div>
-                        <div class="right-tool2"><img src="imgs/Upload icon.png" alt=""></div>
-                        <div class="right-tool3"><img src="imgs/Trash icon.png" alt=""></div>
-                        <li class="right-text2">1&nbsp;of&nbsp;28</li> 
-                        <div class="right-tool4"><img src="imgs/Arrow left.png" alt=""></div>
-                        <div class="right-tool5"><img src="imgs/Arrow right.png" alt=""></div>
-                    </div>
-                        
-                    </div>
-                    <div class="scroll-right">
-                    <div class="content-content"></div>
-                    <div class="content-content"></div>
-                    <div class="content-content"></div>
-                    <div class="content-content"></div>
-                    <div class="content-content"></div>
-                    <div class="content-content"></div>
-                    <div class="content-content"></div>
-                    <div class="content-content"></div>
-                    <div class="content-content"></div>
-                    <div class="content-content"></div>
-                </div>    
+                        <div class="content-rigth-header">
+                            <li class="rigth-text1"> <div class="tips"></div>Bessie&nbsp;Berry &nbsp;&nbsp;&nbsp; </li>
+                        <div class="icon-box">
+                            <div class="right-tool1"><img src="imgs/User icon.png" alt=""></div>
+                            <div class="right-tool2"><img src="imgs/Upload icon.png" alt=""></div>
+                            <div class="right-tool3"><img src="imgs/Trash icon.png" alt=""></div>
+                            <li class="right-text2">1&nbsp;of&nbsp;28</li> 
+                            <div class="right-tool4"><img src="imgs/Arrow left.png" alt=""></div>
+                            <div class="right-tool5"><img src="imgs/Arrow right.png" alt=""></div>
+                        </div>
+                            
+                        </div>
+                        <div class="scroll-right">
+                        <div class="section">
+                            <div class="receiving">
+                                <img src="imgs/Face8.png" class="receiving-face">
+                                <div class="receiving-section">
+                                    <span class="receiving-name">Bessie Berry</span>
+                                    <span class='receiving-time'>8:31 AM</span>
+                                    <p class="receiving-content">Hi guys I've got the O2 package and have really slow internet.A speed check online said i can get 3mbps but it seems more like 0.5 these days,just freezing and taking ages to open pages and open audio files for example.I have decided to switch to the UPC package which offers 10mbps but do you think i will get it?</p>
+                                </div>
+                            </div>
+                            <div class="sending">
+                                <img src="imgs/Face8.png" class="own-face">
+                                <div class="sending-section">
+                                    <span class="receiving-name">Bessie Berry</span>
+                                    <span class='receiving-time'>8:31 AM</span>
+                                    <p class="sending-content">
+                                        I have internet for 9 month and never could benefit from the full capacity of 5Mbit/s as it is filtered by O2 when it detect traffic on public p2p sharing in my situation all my internet speed slows to 512Kbit/s.I never had 400KB/s on when downloading from p2p public servers like torrent emule etc.I download with 500Kb/s from private trakers instead.So conclusion O2 block traffic on p2p connections.I have made hundreds of test in Italy and Sweden and Romania with the same to download with the same setting and same antivirus and just needed to open ports in firewall and forward same ports and the speed was at full capacity in i minutes.here in 9 months never had this luck.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <span class="section-time">Tuesday</span>
+                            <div class="receiving">
+                                <img src="imgs/Face8.png" class="receiving-face">
+                                <div class="receiving-section">
+                                    <span class="receiving-name">Bessie Berry</span>
+                                    <span class='receiving-time'>8:31 AM</span>
+                                    <p class="receiving-content">Hi guys I've got the O2 package and have really slow internet.A speed check online said i can get 3mbps but it seems more like 0.5 these days,just freezing and taking ages to open pages and open audio files for example.I have decided to switch to the UPC package which offers 10mbps but do you think i will get it?</p>
+                                </div>
+                            </div>
+                            <div class="sending">
+                                <img src="imgs/Face8.png" class="own-face">
+                                <div class="sending-section">
+                                    <span class="receiving-name">Bessie Berry</span>
+                                    <span class='receiving-time'>8:31 AM</span>
+                                    <p class="sending-content">
+                                        I have internet for 9 month and never could benefit from the full capacity of 5Mbit/s as it is filtered by O2 when it detect traffic on public p2p sharing in my situation all my internet speed slows to 512Kbit/s.I never had 400KB/s on when downloading from p2p public servers like torrent emule etc.I download with 500Kb/s from private trakers instead.So conclusion O2 block traffic on p2p connections.I have made hundreds of test in Italy and Sweden and Romania with the same to download with the same setting and same antivirus and just needed to open ports in firewall and forward same ports and the speed was at full capacity in i minutes.here in 9 months never had this luck.
+                                    </p>
+                                    <div class="sending-img">
+                                        <img src="imgs/photo1.png">
+                                        <div class="filter"></div>
+                                        <div class="open-icon"></div>
+                                </div>
+                                <div class="sending-img">
+                                    <img src="imgs/download1.png">
+                                    <div class="filter"></div>
+                                    <div class="open-icon"></div>
+                            </div>
+
+                            </div>               
+                        </div>  
+                         </div> 
+                         <div class="section">
+                            <div class="receiving">
+                                <img src="imgs/Face8.png" class="receiving-face">
+                                <div class="receiving-section">
+                                    <span class="receiving-name">Bessie Berry</span>
+                                    <span class='receiving-time'>8:31 AM</span>
+                                    <p class="receiving-content">Hi guys I've got the O2 package and have really slow internet.A speed check online said i can get 3mbps but it seems more like 0.5 these days,just freezing and taking ages to open pages and open audio files for example.I have decided to switch to the UPC package which offers 10mbps but do you think i will get it?</p>
+                                </div>
+                            </div>
+                            <div class="sending">
+                                <img src="imgs/Face8.png" class="own-face">
+                                <div class="sending-section">
+                                    <span class="receiving-name">Bessie Berry</span>
+                                    <span class='receiving-time'>8:31 AM</span>
+                                    <p class="sending-content">
+                                        I have internet for 9 month and never could benefit from the full capacity of 5Mbit/s as it is filtered by O2 when it detect traffic on public p2p sharing in my situation all my internet speed slows to 512Kbit/s.I never had 400KB/s on when downloading from p2p public servers like torrent emule etc.I download with 500Kb/s from private trakers instead.So conclusion O2 block traffic on p2p connections.I have made hundreds of test in Italy and Sweden and Romania with the same to download with the same setting and same antivirus and just needed to open ports in firewall and forward same ports and the speed was at full capacity in i minutes.here in 9 months never had this luck.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <span class="section-time">Tuesday</span>
+                            <div class="receiving">
+                                <img src="imgs/Face8.png" class="receiving-face">
+                                <div class="receiving-section">
+                                    <span class="receiving-name">Bessie Berry</span>
+                                    <span class='receiving-time'>8:31 AM</span>
+                                    <p class="receiving-content">Hi guys I've got the O2 package and have really slow internet.A speed check online said i can get 3mbps but it seems more like 0.5 these days,just freezing and taking ages to open pages and open audio files for example.I have decided to switch to the UPC package which offers 10mbps but do you think i will get it?</p>
+                                </div>
+                            </div>
+                            <div class="sending">
+                                <img src="imgs/Face8.png" class="own-face">
+                                <div class="sending-section">
+                                    <span class="receiving-name">Bessie Berry</span>
+                                    <span class='receiving-time'>8:31 AM</span>
+                                    <p class="sending-content">
+                                        I have internet for 9 month and never could benefit from the full capacity of 5Mbit/s as it is filtered by O2 when it detect traffic on public p2p sharing in my situation all my internet speed slows to 512Kbit/s.I never had 400KB/s on when downloading from p2p public servers like torrent emule etc.I download with 500Kb/s from private trakers instead.So conclusion O2 block traffic on p2p connections.I have made hundreds of test in Italy and Sweden and Romania with the same to download with the same setting and same antivirus and just needed to open ports in firewall and forward same ports and the speed was at full capacity in i minutes.here in 9 months never had this luck.
+                                    </p>
+                                    <div class="sending-img">
+                                        <img src="imgs/photo1.png">
+                                        <div class="filter"></div>
+                                        <div class="open-icon"></div>
+                                </div>
+                                <div class="sending-img">
+                                    <img src="imgs/download1.png">
+                                    <div class="filter"></div>
+                                    <div class="open-icon"></div>
+                            </div>
+
+                            </div>               
+                        </div>  
+                         </div>  <div class="section">
+                            <div class="receiving">
+                                <img src="imgs/Face8.png" class="receiving-face">
+                                <div class="receiving-section">
+                                    <span class="receiving-name">Bessie Berry</span>
+                                    <span class='receiving-time'>8:31 AM</span>
+                                    <p class="receiving-content">Hi guys I've got the O2 package and have really slow internet.A speed check online said i can get 3mbps but it seems more like 0.5 these days,just freezing and taking ages to open pages and open audio files for example.I have decided to switch to the UPC package which offers 10mbps but do you think i will get it?</p>
+                                </div>
+                            </div>
+                            <div class="sending">
+                                <img src="imgs/Face8.png" class="own-face">
+                                <div class="sending-section">
+                                    <span class="receiving-name">Bessie Berry</span>
+                                    <span class='receiving-time'>8:31 AM</span>
+                                    <p class="sending-content">
+                                        I have internet for 9 month and never could benefit from the full capacity of 5Mbit/s as it is filtered by O2 when it detect traffic on public p2p sharing in my situation all my internet speed slows to 512Kbit/s.I never had 400KB/s on when downloading from p2p public servers like torrent emule etc.I download with 500Kb/s from private trakers instead.So conclusion O2 block traffic on p2p connections.I have made hundreds of test in Italy and Sweden and Romania with the same to download with the same setting and same antivirus and just needed to open ports in firewall and forward same ports and the speed was at full capacity in i minutes.here in 9 months never had this luck.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <span class="section-time">Tuesday</span>
+                            <div class="receiving">
+                                <img src="imgs/Face8.png" class="receiving-face">
+                                <div class="receiving-section">
+                                    <span class="receiving-name">Bessie Berry</span>
+                                    <span class='receiving-time'>8:31 AM</span>
+                                    <p class="receiving-content">Hi guys I've got the O2 package and have really slow internet.A speed check online said i can get 3mbps but it seems more like 0.5 these days,just freezing and taking ages to open pages and open audio files for example.I have decided to switch to the UPC package which offers 10mbps but do you think i will get it?</p>
+                                </div>
+                            </div>
+                            <div class="sending">
+                                <img src="imgs/Face8.png" class="own-face">
+                                <div class="sending-section">
+                                    <span class="receiving-name">Bessie Berry</span>
+                                    <span class='receiving-time'>8:31 AM</span>
+                                    <p class="sending-content">
+                                        I have internet for 9 month and never could benefit from the full capacity of 5Mbit/s as it is filtered by O2 when it detect traffic on public p2p sharing in my situation all my internet speed slows to 512Kbit/s.I never had 400KB/s on when downloading from p2p public servers like torrent emule etc.I download with 500Kb/s from private trakers instead.So conclusion O2 block traffic on p2p connections.I have made hundreds of test in Italy and Sweden and Romania with the same to download with the same setting and same antivirus and just needed to open ports in firewall and forward same ports and the speed was at full capacity in i minutes.here in 9 months never had this luck.
+                                    </p>
+                                    <div class="sending-img">
+                                        <img src="imgs/photo1.png">
+                                        <div class="filter"></div>
+                                        <div class="open-icon"></div>
+                                </div>
+                                <div class="sending-img">
+                                    <img src="imgs/download1.png">
+                                    <div class="filter"></div>
+                                    <div class="open-icon"></div>
+                            </div>
+
+                            </div>               
+                        </div>  
+                         </div> 
+                         
+                      </div>
+                      <div class="input-box-p">
+                        <img src="imgs/addicon.png" class="openchat-add">
+                        <input type="text" class="openchat-talk">
+                    </div> 
 </body>
 </html>
